@@ -11,11 +11,11 @@ export default function Card({id, name, price, info, image, noadopt, adopt}){
     }
 
     return (
-      <div className="w-[90%] h-[90%] shadow-xl rounded-lg p-2 bg-white">
+      <div className="w-[450px] h-full shadow-xl rounded-lg p-2 bg-white">
         <img
           src={image}
           alt="doggo"
-          className="w-full h-[60%] shadow-md rounded-lg"
+          className=" aspect-square object-cover shadow-md rounded-lg"
         ></img>
         <div>
           <h2 className="text-lg m-3">{name}</h2>

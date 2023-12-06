@@ -38,9 +38,9 @@ function App() {
 	}
 
 	return (
-    <div className="bg-slate-400">
+    <div className="bg-slate-400 min-h-screen">
       <Nav />
-      <div className="App w-[80%] h-full flex flex-col justify-center m-auto">
+      <div className="App w-[80%] flex flex-col justify-center m-auto">
         <Breeds breeds={breeds} noadopt={noadopt} adopt={adopt}></Breeds>
       </div>
     </div>
