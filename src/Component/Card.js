@@ -10,23 +10,40 @@ export default function Card({id, name, price, info, image, noadopt, adopt}){
         return setReadmore(!readmore);
     }
 
-    return(
+    return (
+      <div className="w-[90%] h-[90%] shadow-xl rounded-lg p-2 bg-white">
+        <img
+          src={image}
+          alt="doggo"
+          className="w-full h-[60%] shadow-md rounded-lg"
+        ></img>
         <div>
-            <img src={image} alt="Kutta"></img>
-            <div>
-                <h2>{name}</h2>
-            </div>
-            <div>
-                <h2>{price}</h2>
-            </div>
-            <div>
-                <p>{about}</p>
-                <span onClick={readmoreHandler}> { readmore ? `showless` : `readmore`} </span>
-            </div>
-            <div>
-                <button onClick={()=> adopt(id)}>Adopt Now</button>
-                <button onClick={()=> noadopt(id)}>Not Now</button>
-            </div>
+          <h2 className="text-lg m-3">{name}</h2>
         </div>
+        <div>
+          <h2 className="text-lg m-2 text-green-600">{price}</h2>
+        </div>
+        <div>
+          <p className="text-slate-500 text-sm m-3">{about}</p>
+          <span onClick={readmoreHandler} className="pointer">
+            {" "}
+            {readmore ? `showless` : `readmore`}{" "}
+          </span>
+        </div>
+        <div className="p-2">
+          <button
+            onClick={() => adopt(id)}
+            className="bg-green-500 rounded-xl text-white p-2 text-lg mx-5"
+          >
+            Adopt Now
+          </button>
+          <button
+            onClick={() => noadopt(id)}
+            className="bg-red-500 rounded-xl text-white p-2 text-lg mx-5"
+          >
+            Not Now
+          </button>
+        </div>
+      </div>
     );
 }
